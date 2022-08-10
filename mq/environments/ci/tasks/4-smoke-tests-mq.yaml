@@ -28,6 +28,8 @@ spec:
       default: ""
     - name: app-name
       default: ""
+    - name: storage
+      default: ""
     - name : security
       default: ""
     - name : ha
@@ -106,6 +108,8 @@ spec:
 
           if $(params.ha); then
             export YAML_ROOT="$(params.yaml)/native-ha-qmgr"
+          else if $(params.storage); then
+            export YAML_ROOT="$(params.yaml)/durable-qmgr"
           else
             export YAML_ROOT="$(params.yaml)/generic-qmgr"
           fi
