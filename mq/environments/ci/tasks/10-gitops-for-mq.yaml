@@ -120,7 +120,7 @@ spec:
           if [[ $APP_NAME == *"qm"* ]] ; then
             if [[ "$(params.ha)" == "true" ]] ; then
               export YAML_ROOT="$(params.yaml)/native-ha-qmgr"
-            else if [[ "$(params.storage)" == "true" ]]; then
+            elif [[ "$(params.storage)" == "true" ]]; then
               eport YAML_ROOT="$(params.yaml)/durable-qmgr"
             else
               export YAML_ROOT="$(params.yaml)/generic-qmgr"
@@ -252,7 +252,7 @@ spec:
           if [[ $APP_NAME == *"qm"* ]]; then
             if [[ "$(params.ha)" == "true" ]] ; then
               export SOURCE_DIR="../$(params.yaml)/native-ha-qmgr"
-            else if [[ "$(params.storage)" == "true" ]]; then
+            elif [[ "$(params.storage)" == "true" ]]; then
               export SOURCE_DIR="../$(params.yaml)/durable-qmgr"
             else
               export SOURCE_DIR="../$(params.yaml)/generic-qmgr"
