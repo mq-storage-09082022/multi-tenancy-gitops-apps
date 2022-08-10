@@ -106,9 +106,9 @@ spec:
           IMAGE_URL="${IMAGE_SERVER}/${IMAGE_NAMESPACE}/${IMAGE_REPOSITORY}"
           IMAGE_VERSION="$(params.image-tag)"
 
-          if $(params.ha); then
+          if [[ "$(params.ha)" == "true" ]]; then
             export YAML_ROOT="$(params.yaml)/native-ha-qmgr"
-          else if $(params.storage); then
+          else if [[ "$(params.storage)" == "true" ]]; then
             export YAML_ROOT="$(params.yaml)/durable-qmgr"
           else
             export YAML_ROOT="$(params.yaml)/generic-qmgr"
